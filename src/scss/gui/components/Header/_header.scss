@@ -1,3 +1,43 @@
-.title {
-  color: $blue;
+.header {
+  $self: &;
+  padding: 23px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    #{ $self }__logo {
+      font-size: 50px;
+      color: $primary;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      #{ $self }__links {
+        a {
+          text-decoration: none;
+          color: $secondary;
+          font-weight: 700;
+
+          &:not(:first-child) {
+            margin-left: 30px;
+          }
+
+          &:last-child {
+            margin-right: 70px !important;
+          }
+
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
 }
