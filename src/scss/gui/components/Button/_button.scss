@@ -1,12 +1,36 @@
 .button {
+  min-width: 120px;
   font-size: 16px;
   display: inline-block;
   font-weight: 400;
   background-color: $primary;
-  padding: 6px 24px;
+  text-align: center;
   color: $light;
   border-radius: 30px;
   line-height: 1.5;
   border: 1px solid transparent;
   cursor: pointer;
+
+  &.sm {
+    padding: 6px 24px;
+  }
+
+  &.md {
+    padding: 16px 48px;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $primary-hover;
+    border-color: $primary;
+  }
+
+  &--v2 {
+    background-color: $secondary;
+
+    &:hover,
+    &:active {
+      background-color: $secondary-hover;
+    }
+  }
 }

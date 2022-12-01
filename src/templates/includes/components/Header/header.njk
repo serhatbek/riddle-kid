@@ -1,8 +1,38 @@
 {% import "includes/components/Button/button.njk" as Button %}
 
-<div>
-  <h1 class='title'>Header meader</h1>
-  {{Button.item(
-    text='Join Class'
+{% set navItems = [
+  {
+    title: 'Home',
+    url: '/'
+  }, {
+    title: 'About',
+    url: '/'
+  }, {
+    title: 'Classes',
+    url: '/'
+  }, {
+    title: 'Teachers',
+    url: '/'
+  }, {
+    title: 'Gallery',
+    url: '/'
+  }, {
+    title: 'Contact',
+    url: '/'
+  }
+] %}
+
+<header class='header'>
+  <div class="container">
+    <a href="/">KidsRiddle</a>
+    <nav>
+      {% for item in navItems %}
+        <a href="{{item.url}}">{{item.title}}</a>
+      {% endfor %}
+      {{Button.item(
+    text='Join Class',
+    class='sm'
   )}}
-</div>
+    </nav>
+  </div>
+</header>
