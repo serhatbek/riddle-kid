@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      {% if title %}
+        {{ title }}
+      {% endif %}
+    </title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header>
+      {% include "includes/components/Header/header.njk" %}
+    </header>
+
+    <main>
+      {% block content %}
+        <p>Home</p>
+      {% endblock %}
+    </main>
+
+    <footer>
+      {% include "includes/components/Footer/footer.njk" %}
+    </footer>
+  </body>
+</html>

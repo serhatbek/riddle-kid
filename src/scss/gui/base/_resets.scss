@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+ol,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  line-height: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  box-sizing: border-box;
+}
+
+select,
+input,
+button,
+option,
+textarea,
+label,
+input::-webkit-input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+
+select,
+input,
+span,
+button,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+figure,
+p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}

@@ -1,0 +1,10 @@
+{% extends 'includes/layout/layout.njk' %}
+{% import "includes/components/Button/button.njk" as Button %}
+
+{% set title = 'Home' %}
+
+{% block content %}
+  {{Button.item(
+    text='Join Class'
+  )}}
+{% endblock %}

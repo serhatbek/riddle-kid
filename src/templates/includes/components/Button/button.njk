@@ -1,0 +1,13 @@
+{% macro item(text, class, href, attr, buttonv2) %}
+  {% if href %}
+    <a href="{{ href }}" class="button
+    {%- if class %} {{ class }} {%- endif -%}
+    {% if buttonv2 %} button--v2 {%- endif -%}
+    " {{ attr }}>{{ text }}</a>
+  {% else %}
+    <button class="button
+    {%- if class %} {{ class }} {%- endif -%}
+    {%- if class %} button--v2 {%- endif -%}
+    " {{ attr }}>{{ text }}</button>
+  {% endif %}
+{% endmacro %}
