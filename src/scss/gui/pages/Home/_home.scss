@@ -2,6 +2,7 @@
   $self: &;
   background-color: $cyan;
   max-height: 845px;
+  margin-bottom: 48px;
 
   @include lg {
     max-height: 100%;

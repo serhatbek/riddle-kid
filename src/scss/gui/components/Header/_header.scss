@@ -1,34 +1,72 @@
 .header {
   $self: &;
-  padding: 23px 0;
+  padding: 20px 0;
   box-shadow: 0 -12px 20px 8px rgba($color: #000000, $alpha: 0.5);
+  background-color: $light;
 
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 
     #{ $self }__logo {
-      font-size: 50px;
+      font-size: 38px;
       color: $primary;
       font-weight: 600;
       text-decoration: none;
       margin-right: 10px;
     }
 
+    #{ $self }__menu-toggle {
+      display: none;
+
+      @include lg {
+        display: block;
+      }
+    }
+
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: all 300ms ease-in-out;
+
+      @include lg {
+        position: absolute;
+        width: 100%;
+        padding-bottom: 15px;
+        flex-direction: column;
+        align-items: self-start;
+        background-color: $light;
+        top: -380px;
+        left: 0;
+        right: 0;
+      }
 
       #{ $self }__links {
+        @include lg {
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          width: 100%;
+        }
+
         a {
           text-decoration: none;
           color: $secondary;
           font-weight: 700;
 
+          @include lg {
+            padding: 15px;
+          }
+
           &:not(:first-child) {
             margin-left: 30px;
+
+            @include lg {
+              margin-left: 0;
+            }
           }
 
           &:last-child {
