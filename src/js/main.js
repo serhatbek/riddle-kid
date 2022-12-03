@@ -13,10 +13,15 @@ if (menuToggleBtn) {
   menuToggleBtn.addEventListener('click', toggleNavbar);
 }
 
-const checkWindowSize = () => {
-  if (window.innerWidth > 992 && mobileMenu.classList.contains('active')) {
+// It's better to use 'matchMedia' since 'onresize' event is an expensive operation.
+
+const mediaQuery = window.matchMedia('(min-width: 992px)');
+
+const checkMobileQuery = (e) => {
+  if (e.matches && mobileMenu.classList.contains('active')) {
     toggleNavbar();
   }
 };
 
-window.onresize = checkWindowSize;
+mediaQuery.addEventListener('change', checkMobileQuery);
+checkMobileQuery(mediaQuery);
