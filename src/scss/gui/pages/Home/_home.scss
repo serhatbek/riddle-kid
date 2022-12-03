@@ -1,27 +1,81 @@
 .section-banner {
   $self: &;
   background-color: $cyan;
+  max-height: 845px;
+
+  @include lg {
+    max-height: 100%;
+  }
 
   .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    @include lg {
+      flex-direction: column;
+    }
+
     #{ $self }__left {
-      flex: 0 0 50%;
       max-width: 50%;
       padding: 0 15px;
+      color: $white;
+
+      @include lg {
+        max-width: 100%;
+        text-align: center;
+        margin-top: 48px;
+        padding: 0;
+      }
 
       h1,
       h4 {
         font-family: 'Handlee', sans-serif;
       }
+
+      h1 {
+        font-size: 72px;
+        margin-bottom: 10px;
+        font-weight: 700;
+
+        @include md {
+          font-size: 54px;
+        }
+
+        @include sm {
+          font-size: 44px;
+        }
+
+        @include xs {
+          font-size: 34px;
+        }
+      }
+
+      h4 {
+        font-size: 24px;
+
+        @include xs {
+          font-size: 18px;
+        }
+      }
+
+      p,
+      h4 {
+        margin-bottom: 24px;
+      }
+
+      p {
+        line-height: 1.5;
+      }
     }
 
     #{ $self }__right {
-      flex: 0 0 50%;
       max-width: 50%;
       margin-top: 48px;
+
+      @include lg {
+        max-width: 100%;
+      }
     }
   }
 }

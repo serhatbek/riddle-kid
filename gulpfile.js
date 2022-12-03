@@ -12,7 +12,9 @@ const copyImages = () => {
 };
 
 const transferFonts = () => {
-  return src('src/fonts/*.{eot,woff,woff2}').pipe(dest('dist/assets/fonts'));
+  return src('src/fonts/*.{eot,woff,woff2,ttf}').pipe(
+    dest('dist/assets/fonts')
+  );
 };
 
 const customPlumber = (errorTitle) => {
@@ -66,7 +68,12 @@ const watchTasks = () => {
     parallel(njkRender, browserSyncReload)
   );
   watch(
-    ['src/scss/**/*.scss', 'src/js/*.js', 'src/images/*.{webp,jpeg,png}'],
+    [
+      'src/scss/**/*.scss',
+      'src/js/*.js',
+      'src/images/*.{webp,jpeg,png}',
+      'src/fonts/*.ttf',
+    ],
     parallel(
       copyImages,
       transferFonts,
