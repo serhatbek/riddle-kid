@@ -1,6 +1,7 @@
 .header {
   $self: &;
   padding: 23px 0;
+  box-shadow: 0 -12px 20px 8px rgba($color: #000000, $alpha: 0.5);
 
   .container {
     display: flex;

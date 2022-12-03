@@ -1,12 +1,32 @@
 {% extends 'includes/layout/layout.njk' %}
 {% import "includes/components/Button/button.njk" as Button %}
-
 {% set title = 'Home' %}
 
+{% set bannerItems = {
+  title: 'New Approach to Kids Education',
+  subtitle: 'Kids Learning Center',
+  par: 'Sea ipsum kasd eirmod kasd magna, est sea et diam ipsum est amet sed sit. Ipsum dolor no justo dolor et, lorem ut dolor erat dolore sed ipsum at ipsum nonumy amet. Clita lorem dolore sed stet et est justo dolore.',
+  btn: 'Learn More',
+  img: '../assets/images/banner.png'
+} %}
+
 {% block content %}
-  {{Button.item(
-    text='Join Class',
-    buttonv2=true,
-    class='md'
-  )}}
+  <section class="section-banner">
+    <div class="container">
+      <div class="section-banner__left">
+        <h1>{{bannerItems.title}}</h1>
+        <h4>{{bannerItems.subtitle}}</h4>
+        <p>{{bannerItems.par}}</p>
+        {{Button.item(
+          href='/',
+          class='md',
+          buttonv2=true,
+          text=bannerItems.btn
+      )}}
+      </div>
+      <figure class="section-banner__right">
+        <img src="{{bannerItems.img}}" alt="{{bannerItems.title}}">
+      </figure>
+    </div>
+  </section>
 {% endblock %}

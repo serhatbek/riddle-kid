@@ -22,21 +22,19 @@
   }
 ] %}
 
-<header class='header'>
-  <div class='container'>
-    <a class='header__logo' href="/">KidsRiddle</a>
-    <nav>
-      <div class="header__links">
-        {% for item in navItems %}
-          <a href="{{item.url}}">{{item.title}}</a>
-        {% endfor %}
-      </div>
+<div class='container'>
+  <a class='header__logo' href="/">KidsRiddle</a>
+  <nav>
+    <div class="header__links">
+      {% for item in navItems %}
+        <a href="{{item.url}}">{{item.title}}</a>
+      {% endfor %}
+    </div>
 
-      {{Button.item(
+    {{Button.item(
         href='/',
         text='Join Class',
         class='sm'
       )}}
-    </nav>
-  </div>
-</header>
+  </nav>
+</div>

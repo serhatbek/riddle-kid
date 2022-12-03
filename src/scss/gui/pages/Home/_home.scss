@@ -1,0 +1,27 @@
+.section-banner {
+  $self: &;
+  background-color: $cyan;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    #{ $self }__left {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 0 15px;
+
+      h1,
+      h4 {
+        font-family: 'Handlee', sans-serif;
+      }
+    }
+
+    #{ $self }__right {
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-top: 48px;
+    }
+  }
+}
