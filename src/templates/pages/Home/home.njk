@@ -13,33 +13,33 @@
 {% set infoItems = [
   {
     icon:'bxs-game',
-    desc:'Play Ground',
-    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+    title:'Play Ground',
+    desc:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
   },
     {
     icon:'bxs-music',
-    desc:'Music and Dance',
-    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+    title:'Music and Dance',
+    desc:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
   },
     {
     icon:'bxs-palette',
-    desc:'Arts and Crafts',
-    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+    title:'Arts and Crafts',
+    desc:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
   },
     {
     icon:'bxs-car',
-    desc:'Safe Transportation',
-    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+    title:'Safe Transportation',
+    desc:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
   },
     {
-    icon:'xs-bowl-rice',
-    desc:'Healthy Food',
-    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+    icon:'bxs-bowl-rice',
+    title:'Healthy Food',
+    desc:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
   },
     {
     icon:'bxs-backpack',
-    desc:'Educational Tour',
-    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+    title:'Educational Tour',
+    desc:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
   }
 ] %}
 
@@ -63,13 +63,12 @@
     </div>
   </section>
   <section class='section-info'>
-    <div class="container">
+    <div class="container container--narrow">
       <div class="box">
         {% for item in infoItems %}
           <div class="info-card">
             <span>
               <i class='bx {{item.icon}}' ></i>
-              {{item.icon}}
             </span>
             <div>
               <h4>{{item.title}}</h4>

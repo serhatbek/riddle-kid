@@ -80,3 +80,16 @@
     }
   }
 }
+
+.section-info {
+  padding: 48px 0;
+
+  .container {
+    .box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: baseline;
+    }
+  }
+}

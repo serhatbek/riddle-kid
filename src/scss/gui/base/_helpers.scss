@@ -1,9 +1,12 @@
 .container {
   max-width: 1780px;
-  // max-width: 1140px;
   width: 100%;
   padding: 0 10px;
   margin: 0 auto;
+
+  &--narrow {
+    max-width: 1140px;
+  }
 }
 
 .overflowHidden {

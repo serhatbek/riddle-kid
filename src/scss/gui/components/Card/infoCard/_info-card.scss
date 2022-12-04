@@ -1,0 +1,45 @@
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  max-width: 350px;
+  padding: 30px;
+  // margin-bottom: 24px;
+  margin: 0 5px 24px;
+  border-radius: 5px;
+  border-top: 1px solid $border;
+  background-color: $light;
+  box-shadow: 0 18px 24px -24px rgba($color: #000000, $alpha: 0.8);
+
+  @include md {
+    max-width: 510px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  span {
+    display: block;
+
+    i {
+      font-size: 40px;
+      color: $cyan;
+    }
+  }
+
+  div {
+    padding-left: 24px;
+
+    h4 {
+      font-family: 'Handlee', sans-serif;
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: $secondary;
+    }
+
+    p {
+      color: $text;
+      line-height: 1.5;
+    }
+  }
+}
