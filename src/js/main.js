@@ -1,3 +1,4 @@
+// Mobile Menu
 const menuToggleBtn = document.querySelector('.header__menu-toggle');
 const mobileMenu = document.querySelector('.header__menu');
 const appBody = document.querySelector('body');
@@ -13,8 +14,6 @@ if (menuToggleBtn) {
   menuToggleBtn.addEventListener('click', toggleNavbar);
 }
 
-// It's better to use 'matchMedia' since 'onresize' event is an expensive operation.
-
 const mediaQuery = window.matchMedia('(min-width: 992px)');
 
 const checkMobileQuery = (e) => {
@@ -25,3 +24,13 @@ const checkMobileQuery = (e) => {
 
 mediaQuery.addEventListener('change', checkMobileQuery);
 checkMobileQuery(mediaQuery);
+
+const menuLinks = document.querySelectorAll('.header__links > a');
+
+menuLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    if (mobileMenu.classList.contains('active')) {
+      toggleNavbar();
+    }
+  });
+});
