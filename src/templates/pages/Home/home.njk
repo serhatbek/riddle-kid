@@ -10,6 +10,39 @@
   img: '../assets/images/banner.png'
 } %}
 
+{% set infoItems = [
+  {
+    icon:'bxs-game',
+    desc:'Play Ground',
+    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+  },
+    {
+    icon:'bxs-music',
+    desc:'Music and Dance',
+    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+  },
+    {
+    icon:'bxs-palette',
+    desc:'Arts and Crafts',
+    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+  },
+    {
+    icon:'bxs-car',
+    desc:'Safe Transportation',
+    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+  },
+    {
+    icon:'xs-bowl-rice',
+    desc:'Healthy Food',
+    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+  },
+    {
+    icon:'bxs-backpack',
+    desc:'Educational Tour',
+    text:'Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero lorem amet elitr vero...'
+  }
+] %}
+
 {% block content %}
   <section class="section-banner">
     <div class="container">
@@ -29,4 +62,21 @@
       </figure>
     </div>
   </section>
-{% endblock %}
+  <section class='section-info'>
+    <div class="container">
+      <div class="box">
+        {% for item in infoItems %}
+          <div class="info-card">
+            <span>
+              <i class='bx {{item.icon}}' ></i>
+              {{item.icon}}
+            </span>
+            <div>
+              <h4>{{item.title}}</h4>
+              <p>{{item.desc}}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endblock %}
