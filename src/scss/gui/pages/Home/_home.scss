@@ -104,7 +104,7 @@
 
     #{ $self }__left {
       max-width: 42%;
-      padding: 0 10px;
+      padding: 0 15px;
 
       @include lg {
         max-width: 100%;
@@ -118,7 +118,7 @@
 
     #{ $self }__right {
       max-width: 58%;
-      padding: 0 10px;
+      padding: 0 15px;
 
       @include lg {
         max-width: 80%;
