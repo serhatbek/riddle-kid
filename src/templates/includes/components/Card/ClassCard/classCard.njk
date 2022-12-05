@@ -1,0 +1,29 @@
+{% macro item(img, title, desc, infoTitle, infoDesc) %}
+  <div class="class-card">
+    <figure>
+      <img src="{{ img }}" alt="{{ title }}">
+    </figure>
+    <div class='class-card__desc'>
+      <h4>{{ title }}</h4>
+      <p>{{ desc }}</p>
+    </div>
+    <div class='class-card__info'>
+      <div>
+        {% for item in infoTitle %}
+          <div>{{ item }}</div>
+        {% endfor %}
+      </div>
+      <div>
+        {% for item in infoDesc %}
+          <div>{{ item }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
+
+{# img:'../assets/images/classes-2.jpeg',
+      title:'Language Learning',
+      desc:'Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo',
+      infoTitle: [],
+      infoDesc: [] #}

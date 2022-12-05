@@ -1,5 +1,6 @@
 {% extends 'includes/layout/layout.njk' %}
 {% import "includes/components/Button/button.njk" as Button %}
+{% import "includes/components/Card/ClassCard/classCard.njk" as classCard %}
 {% set title = 'Home' %}
 
 {% set bannerItems = {
@@ -155,15 +156,29 @@
 
     <section class="section section--classes">
       <div class="container">
-        <p class='section__title section__title--before'>
+        <p class='section__title section__title--before section__title--after'>
           <span>
-              Classes
-            </span>
+            {{ sectionClass.title }}
+          </span>
         </p>
-        <h2 class='section__subtitle'>Classes</h2>
+        <h2 class='section__subtitle'>{{ sectionClass.subtitle }}</h2>
         <div class="box">
-          <div class="classesCard">Card</div>
+          {% for card in sectionClass.cards %}
+            {{classCard.item(
+              img= card.img,
+              title= card.title,
+              desc= card.desc,
+              infoTitle= card.infoTitle,
+              infoDesc= card.infoDesc
+            )}}
+          {% endfor %}
         </div>
       </div>
     </section>
   {% endblock %}
+
+  {# img:'../assets/images/classes-2.jpeg',
+      title:'Language Learning',
+      desc:'Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo',
+      infoTitle: [],
+      infoDesc: [] #}
