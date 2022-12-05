@@ -43,6 +43,16 @@
   }
 ] %}
 
+{% set sectionAbout = {
+  imgBig:'../assets/images/about-1.jpeg',
+  title:'LEARN ABOUT US',
+  subtitle:'Best School For Your Kids',
+  desc:'Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor',
+  imgSmall:'../assets/images/about-2.jpeg',
+  checkIcon:'bx-check',
+  list: ['Labore eos amet dolor amet diam', 'Etsea et sit dolor amet ipsum', 'Diam dolor diam elitripsum vero.']
+} %}
+
 {% block content %}
   <section class="section-banner">
     <div class="container">
@@ -62,7 +72,7 @@
       </figure>
     </div>
   </section>
-  <section class='section-info'>
+  <section class='section section-info'>
     <div class="container container--narrow">
       <div class="box">
         {% for item in infoItems %}
@@ -76,6 +86,42 @@
             </div>
           </div>
         {% endfor %}
+      </div>
+    </section>
+    <section class="section section-about">
+      <div class="container container--narrow">
+        <figure class='section-about__left'>
+          <img src="{{sectionAbout.imgBig}}" alt="{{sectionAbout.subtitle}}">
+        </figure>
+
+        <div class="section-about__right">
+          <p class='section__title section__title--before'>
+            <span>
+              {{sectionAbout.title}}
+            </span>
+          </p>
+          <h2 class='section__subtitle'>{{sectionAbout.subtitle}}</h2>
+          <p class='section__desc section-about__right__desc'>{{sectionAbout.desc}}</p>
+
+          <div>
+            <figure>
+              <img src="{{sectionAbout.imgSmall}}" alt="{{sectionAbout.subtitle}}">
+            </figure>
+            <ul>
+              {% for item in sectionAbout.list %}
+                <li>
+                  <i class='bx {{sectionAbout.checkIcon}}'></i>
+                  {{item}}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          {{Button.item(
+            class='sm',
+            text='Learn More'
+          )}}
+        </div>
       </div>
     </section>
   {% endblock %}
