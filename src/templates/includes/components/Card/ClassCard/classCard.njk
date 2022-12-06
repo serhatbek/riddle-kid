@@ -1,24 +1,31 @@
-{% macro item(img, title, desc, infoTitle, infoDesc) %}
+{% import "includes/components/Button/button.njk" as Button %}
+
+{% macro item(img, title, desc, infoTitle, infoDesc, btnText, btnHref) %}
   <div class="class-card">
     <figure>
       <img src="{{ img }}" alt="{{ title }}">
     </figure>
-    <div class='class-card__desc'>
-      <h4>{{ title }}</h4>
-      <p>{{ desc }}</p>
+    <div class='class-card__content'>
+      <h4 class="class-card__title">{{ title }}</h4>
+      <p class='class-card__desc'>{{ desc }}</p>
     </div>
-    <div class='class-card__info'>
+    <div class='class-card__info border-top'>
       <div>
         {% for item in infoTitle %}
-          <div>{{ item }}</div>
+          <strong>{{ item }}</strong>
         {% endfor %}
       </div>
       <div>
         {% for item in infoDesc %}
-          <div>{{ item }}</div>
+          <span>{{ item }}</span>
         {% endfor %}
       </div>
     </div>
+    {{Button.item(
+      text= btnText,
+      class='sm',
+      href=btnHref
+    )}}
   </div>
 {% endmacro %}
 

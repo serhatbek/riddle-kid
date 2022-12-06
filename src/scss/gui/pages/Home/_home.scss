@@ -135,6 +135,7 @@
       div {
         display: flex;
         margin-bottom: 32px;
+        justify-content: space-between;
 
         @include sm {
           flex-direction: column;
@@ -142,7 +143,8 @@
         }
 
         figure {
-          max-width: 192px;
+          max-width: 224px;
+          width: 100%;
           padding-right: 30px;
 
           img {
@@ -158,6 +160,10 @@
         ul {
           max-width: 414px;
           width: 100%;
+
+          @include lg {
+            max-width: 100%;
+          }
 
           li {
             display: flex;
@@ -178,6 +184,17 @@
           }
         }
       }
+    }
+  }
+}
+
+.section-classes {
+  .container {
+    text-align: center;
+
+    .box {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

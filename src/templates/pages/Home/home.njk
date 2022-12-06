@@ -62,22 +62,28 @@
       img:'../assets/images/classes-1.jpeg',
       title:'Drawing Class',
       desc:'Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo',
-      infoTitle: [],
-      infoDesc: []
+      infoTitle: ['Age of Kids','Total Seats','Class Time','Tution Fee'],
+      infoDesc: ['3 - 6 Years','40 Seats','08:00 - 10:00','$290 / Month'],
+      btn:'Learn More',
+      btnUrl:'/'
     },
     {
       img:'../assets/images/classes-2.jpeg',
       title:'Language Learning',
       desc:'Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo',
-      infoTitle: [],
-      infoDesc: []
+      infoTitle: ['Age of Kids','Total Seats','Class Time','Tution Fee'],
+      infoDesc: ['3 - 6 Years','40 Seats','08:00 - 10:00','$290 / Month'],
+      btn:'Learn More',
+      btnUrl:'/'
     },
     {
       img:'../assets/images/classes-3.jpeg',
       title:'Basic Science',
       desc:'Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo',
       infoTitle: ['Age of Kids','Total Seats','Class Time','Tution Fee'],
-      infoDesc: ['3 - 6 Years','40 Seats','08:00 - 10:00','$290 / Month']
+      infoDesc: ['3 - 6 Years','40 Seats','08:00 - 10:00','$290 / Month'],
+      btn:'Learn More',
+      btnUrl:'/'
     }
   ]
 } %}
@@ -154,8 +160,8 @@
       </div>
     </section>
 
-    <section class="section section--classes">
-      <div class="container">
+    <section class="section section-classes">
+      <div class="container container--narrow">
         <p class='section__title section__title--before section__title--after'>
           <span>
             {{ sectionClass.title }}
@@ -169,16 +175,12 @@
               title= card.title,
               desc= card.desc,
               infoTitle= card.infoTitle,
-              infoDesc= card.infoDesc
+              infoDesc= card.infoDesc,
+              btnText= card.btn,
+              btnHref= card.btnUrl
             )}}
           {% endfor %}
         </div>
       </div>
     </section>
   {% endblock %}
-
-  {# img:'../assets/images/classes-2.jpeg',
-      title:'Language Learning',
-      desc:'Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo',
-      infoTitle: [],
-      infoDesc: [] #}
