@@ -1,6 +1,7 @@
 {% extends 'includes/layout/layout.njk' %}
 {% import "includes/components/Button/button.njk" as Button %}
-{% import "includes/components/Card/ClassCard/classCard.njk" as classCard %}
+{% import "includes/components/Card/Class-Blog-Card/class-blog-card.njk" as classCard %}
+{% import "includes/components/Card/InfoCard/infoCard.njk" as infoCard %}
 {% set title = 'Home' %}
 
 {% set bannerItems = {
@@ -184,15 +185,11 @@
     <div class="container container--narrow">
       <div class="box">
         {% for item in infoItems %}
-          <div class="info-card">
-            <span>
-              <i class='bx {{item.icon}}' ></i>
-            </span>
-            <div>
-              <h4>{{item.title}}</h4>
-              <p>{{item.desc}}</p>
-            </div>
-          </div>
+          {{infoCard.item(
+            icon= item.icon,
+            title= item.title,
+            desc= item.desc
+          )}}
         {% endfor %}
       </div>
     </section>
