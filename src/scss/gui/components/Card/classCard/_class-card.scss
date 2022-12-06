@@ -33,12 +33,17 @@
     div > strong,
     div > span {
       display: block;
-      padding: 4px 15px;
+      padding: 6px 15px;
       color: $text;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $border;
+      }
     }
 
     div > strong {
       text-align: right;
+      border-right: 1px solid $border;
     }
 
     div > span {
