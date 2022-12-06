@@ -62,8 +62,8 @@
       img:'../assets/images/classes-1.jpeg',
       title:'Drawing Class',
       desc:'Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo',
-      infoTitle: ['Age of Kids','Total Seats','Class Time','Tution Fee'],
-      infoDesc: ['3 - 6 Years','40 Seats','08:00 - 10:00','$290 / Month'],
+      detailTitle: ['Age of Kids','Total Seats','Class Time','Tution Fee'],
+      detailDesc: ['3 - 6 Years','40 Seats','08:00 - 10:00','$290 / Month'],
       btn:'Learn More',
       btnUrl:'/'
     },
@@ -71,8 +71,8 @@
       img:'../assets/images/classes-2.jpeg',
       title:'Language Learning',
       desc:'Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo',
-      infoTitle: ['Age of Kids','Total Seats','Class Time','Tution Fee'],
-      infoDesc: ['3 - 6 Years','40 Seats','08:00 - 10:00','$290 / Month'],
+      detailTitle: ['Age of Kids','Total Seats','Class Time','Tution Fee'],
+      detailDesc: ['3 - 6 Years','40 Seats','08:00 - 10:00','$290 / Month'],
       btn:'Learn More',
       btnUrl:'/'
     },
@@ -80,10 +80,83 @@
       img:'../assets/images/classes-3.jpeg',
       title:'Basic Science',
       desc:'Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo',
-      infoTitle: ['Age of Kids','Total Seats','Class Time','Tution Fee'],
-      infoDesc: ['3 - 6 Years','40 Seats','08:00 - 10:00','$290 / Month'],
+      detailTitle: ['Age of Kids','Total Seats','Class Time','Tution Fee'],
+      detailDesc: ['3 - 6 Years','40 Seats','08:00 - 10:00','$290 / Month'],
       btn:'Learn More',
       btnUrl:'/'
+    }
+  ]
+} %}
+
+{% set sectionBlog = {
+  title: 'LATEST BLOG',
+  subtitle: 'Latest Articles From Blog',
+  cards: [
+    {
+      img:'../assets/images/blog-1.jpeg',
+      title:'Diam amet eos at no eos',
+      desc:'Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet stet...',
+      btn:'Read More',
+      btnUrl:'/',
+      details: [
+        {
+          title: 'Admin',
+          icon: 'bxs-user'
+        },
+        {
+          title: 'Web Design',
+          icon: 'bxs-folder'
+        },
+        {
+          title: '15',
+          icon: 'bxs-conversation'
+        }
+      ]
+
+    },
+      {
+      img:'../assets/images/blog-2.jpeg',
+      title:'Diam amet eos at no eos',
+      desc:'Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet stet...',
+      btn:'Read More',
+      btnUrl:'/',
+      details: [
+        {
+          title: 'Admin',
+          icon: 'bxs-user'
+        },
+        {
+          title: 'Web Design',
+          icon: 'bxs-folder'
+        },
+        {
+          title: '15',
+          icon: 'bxs-conversation'
+        }
+      ]
+
+    },
+      {
+      img:'../assets/images/blog-3.jpeg',
+      title:'Diam amet eos at no eos',
+      desc:'Sed kasd sea sed at elitr sed ipsum justo, sit nonumy diam eirmod, duo et sed sit eirmod kasd clita tempor dolor stet lorem. Tempor ipsum justo amet stet...',
+      btn:'Read More',
+      btnUrl:'/',
+      details: [
+        {
+          title: 'Admin',
+          icon: 'bxs-user'
+        },
+        {
+          title: 'Web Design',
+          icon: 'bxs-folder'
+        },
+        {
+          title: '15',
+          icon: 'bxs-conversation'
+        }
+      ]
+
     }
   ]
 } %}
@@ -162,7 +235,7 @@
     </section>
 
     <section class="section section-classes">
-      <div class="container container--narrow">
+      <div class="container container--narrow textCenter">
         <p class='section__title section__title--before section__title--after'>
           <span>
             {{ sectionClass.title }}
@@ -172,13 +245,38 @@
         <div class="box">
           {% for card in sectionClass.cards %}
             {{classCard.item(
+              classCard= true,
               img= card.img,
               title= card.title,
               desc= card.desc,
-              infoTitle= card.infoTitle,
-              infoDesc= card.infoDesc,
+              detailTitle= card.detailTitle,
+              detailDesc= card.detailDesc,
               btnText= card.btn,
               btnHref= card.btnUrl
+            )}}
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-blog">
+      <div class="container container--narrow textCenter">
+        <p class='section__title section__title--before section__title--after'>
+          <span>
+            {{ sectionBlog.title }}
+          </span>
+        </p>
+        <h2 class='section__subtitle'>{{ sectionBlog.subtitle }}</h2>
+        <div class="box">
+          {% for card in sectionBlog.cards %}
+            {{classCard.item(
+              blogCard= true,
+              img= card.img,
+              title= card.title,
+              desc= card.desc,
+              btnText= card.btn,
+              btnHref= card.btnUrl,
+              blogDetails= card.details
             )}}
           {% endfor %}
         </div>

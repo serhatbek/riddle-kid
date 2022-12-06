@@ -13,6 +13,10 @@
   overflow: hidden;
 }
 
+.textCenter {
+  text-align: center;
+}
+
 main.active {
   &::before {
     content: '';

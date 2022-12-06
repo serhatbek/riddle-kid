@@ -1,12 +1,20 @@
-.class-card {
+.card {
   $self: &;
   max-width: 350px;
   background-color: $light;
   padding: 0 4px 24px;
   box-shadow: 0 18px 24px -24px rgba($color: #000000, $alpha: 0.6);
 
+  @include lg {
+    max-width: 700px;
+  }
+
   #{ $self }__content {
     padding: 20px;
+
+    @include lg {
+      padding: 20px 0;
+    }
 
     h4 {
       font-size: 24px;
@@ -21,13 +29,23 @@
     }
   }
 
-  #{ $self }__info {
+  #{ $self }__classes {
     display: flex;
     justify-content: center;
     padding: 24px 48px;
 
+    @include lg {
+      padding: 24px 0;
+    }
+
     &.border-top {
       border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
+    }
+
+    div {
+      @include lg {
+        width: 100%;
+      }
     }
 
     div > strong,
@@ -48,6 +66,23 @@
 
     div > span {
       text-align: left;
+    }
+  }
+
+  #{ $self }__blog {
+    margin-bottom: 16px;
+
+    small {
+      margin-right: 15px;
+      color: $text;
+
+      @include lg {
+        margin-right: 10px;
+      }
+
+      i {
+        color: $primary;
+      }
     }
   }
 }
