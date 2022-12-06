@@ -5,13 +5,11 @@
     color: $primary;
     position: relative;
     display: inline-block;
-    padding-right: 48px;
     letter-spacing: 1px;
     margin-bottom: 16px;
 
     span {
       position: relative;
-      padding-right: 8px;
       background: $white;
       z-index: 1;
     }
@@ -19,21 +17,19 @@
     &--before::before {
       position: absolute;
       content: '';
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
+      top: 40%;
+      right: -56px;
+      width: 48px;
       height: 2px;
       background-color: $primary;
     }
 
-    &--before::after {
+    &--after::after {
       position: absolute;
       content: '';
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
+      top: 40%;
+      left: -56px;
+      width: 48px;
       height: 2px;
       background-color: $primary;
     }
