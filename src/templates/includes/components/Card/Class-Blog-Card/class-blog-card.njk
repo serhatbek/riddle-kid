@@ -1,6 +1,6 @@
 {% import "includes/components/Button/button.njk" as Button %}
 
-{% macro item(img, title, desc, classCard, detailTitle, detailDesc, btnText, btnHref, blogCard, blogDetails) %}
+{% macro item(img, title, desc, classCard, classesDetails, btnText, btnHref, blogCard, blogDetails) %}
   <div class="card">
     <figure>
       <img src="{{ img }}" alt="{{ title }}">
@@ -26,13 +26,14 @@
     {% if classCard %}
       <div class='card__classes border-top'>
         <div>
-          {% for item in detailTitle %}
-            <strong>{{ item }}</strong>
+          {% for item in classesDetails %}
+            <strong>{{ item.title }}</strong>
           {% endfor %}
         </div>
+
         <div>
-          {% for item in detailDesc %}
-            <span>{{ item }}</span>
+          {% for item in classesDetails %}
+            <span>{{ item.desc }}</span>
           {% endfor %}
         </div>
       </div>
@@ -45,9 +46,3 @@
     )}}
   </div>
 {% endmacro %}
-
-{# img:'../assets/images/classes-2.jpeg',
-      title:'Language Learning',
-      desc:'Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo',
-      detailTitle: [],
-      detailDesc: [] #}
