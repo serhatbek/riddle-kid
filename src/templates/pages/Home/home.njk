@@ -388,39 +388,38 @@
     </section>
 
     <section class="section section-teachers">
-      <div class="container container-narrow">
-        <div class="container container--narrow textCenter">
-          <p class='section__title section__title--before section__title--after'>
-            <span>
-              {{ sectionTeachers.title }}
-            </span>
-          </p>
-          <h2 class='section__subtitle'>{{ sectionTeachers.subtitle }}</h2>
-          <div class="box">
-            {% for item in sectionTeachers.cards %}
-              {% call teachersCard.item(img = item.img, name = item.name, job = item.job) %}
-              {% for item in item.social %}
-                <a href="{{ item.url }}">
-                  <i class='bx {{ item.icon }}' ></i>
-                </a>
-              {% endfor %}
-              {% endcall %}
+      <div class="container container--narrow textCenter">
+        <p class='section__title section__title--before section__title--after'>
+          <span>
+            {{ sectionTeachers.title }}
+          </span>
+        </p>
+        <h2 class='section__subtitle'>{{ sectionTeachers.subtitle }}</h2>
+        <div class="box">
+          {% for item in sectionTeachers.cards %}
+            {% call teachersCard.item(img = item.img, name = item.name, job = item.job) %}
+            {% for item in item.social %}
+              <a href="{{ item.url }}">
+                <i class='bx {{ item.icon }}' ></i>
+              </a>
             {% endfor %}
-          </div>
+            {% endcall %}
+          {% endfor %}
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section section-blog">
-        <div class="container container--narrow textCenter">
-          <p class='section__title section__title--before section__title--after'>
-            <span>
-              {{ sectionBlog.title }}
-            </span>
-          </p>
-          <h2 class='section__subtitle'>{{ sectionBlog.subtitle }}</h2>
-          <div class="box">
-            {% for card in sectionBlog.cards %}
-              {{classCard.item(
+    <section class="section section-blog">
+      <div class="container container--narrow textCenter">
+        <p class='section__title section__title--before section__title--after'>
+          <span>
+            {{ sectionBlog.title }}
+          </span>
+        </p>
+        <h2 class='section__subtitle'>{{ sectionBlog.subtitle }}</h2>
+        <div class="box">
+          {% for card in sectionBlog.cards %}
+            {{classCard.item(
               blogCard= true,
               img= card.img,
               title= card.title,
@@ -429,8 +428,8 @@
               btnHref= card.btnUrl,
               blogDetails= card.details
             )}}
-            {% endfor %}
-          </div>
+          {% endfor %}
         </div>
-      </section>
-    {% endblock %}
+      </div>
+    </section>
+  {% endblock %}

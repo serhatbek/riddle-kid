@@ -42,6 +42,14 @@
     font-weight: 700;
     color: $secondary;
     margin-bottom: 24px;
+
+    @include md {
+      font-size: 32px;
+    }
+
+    @include xs {
+      font-size: 26px;
+    }
   }
 
   &__desc {
