@@ -2,6 +2,7 @@
 {% import "includes/components/Button/button.njk" as Button %}
 {% import "includes/components/Card/Class-Blog-Card/class-blog-card.njk" as classCard %}
 {% import "includes/components/Card/InfoCard/infoCard.njk" as infoCard %}
+{% import "includes/components/Card/teachersCard/teachers-card.njk" as teachersCard with context %}
 {% set title = 'Home' %}
 
 {% set bannerItems = {
@@ -210,22 +211,25 @@
   ]
 } %}
 
-{% set sectionTeachers = [
+{% set sectionTeachers = {
+  title:'OUR TEACHERS',
+  subtitle:'Meet Our Teachers',
+  cards: [
   {
     img: '../assets/images/teacher-1.jpeg',
     name: 'Julia Smith',
     job: 'Music Teacher',
     social: [
       {
-        link:'/',
+        url:'/',
         icon: 'bxl-twitter'
       },
       {
-        link:'/',
+        url:'/',
         icon: 'bxl-facebook'
       },
       {
-        link:'/',
+        url:'/',
         icon: 'bxl-linkedin'
       }
     ]
@@ -235,15 +239,15 @@
     job: 'Language Teacher',
         social: [
       {
-        link:'/',
+        url:'/',
         icon: 'bxl-twitter'
       },
       {
-        link:'/',
+        url:'/',
         icon: 'bxl-facebook'
       },
       {
-        link:'/',
+        url:'/',
         icon: 'bxl-linkedin'
       }
     ]
@@ -253,15 +257,15 @@
     job: 'Dance Teacher',
         social: [
       {
-        link:'/',
+        url:'/',
         icon: 'bxl-twitter'
       },
       {
-        link:'/',
+        url:'/',
         icon: 'bxl-facebook'
       },
       {
-        link:'/',
+        url:'/',
         icon: 'bxl-linkedin'
       }
     ]
@@ -284,7 +288,9 @@
       }
     ]
   }
-] %}
+]
+}
+ %}
 
 {% block content %}
   <section class="section-banner">
@@ -381,17 +387,40 @@
       </div>
     </section>
 
-    <section class="section section-blog">
-      <div class="container container--narrow textCenter">
-        <p class='section__title section__title--before section__title--after'>
-          <span>
-            {{ sectionBlog.title }}
-          </span>
-        </p>
-        <h2 class='section__subtitle'>{{ sectionBlog.subtitle }}</h2>
-        <div class="box">
-          {% for card in sectionBlog.cards %}
-            {{classCard.item(
+    <section class="section section-teachers">
+      <div class="container container-narrow">
+        <div class="container container--narrow textCenter">
+          <p class='section__title section__title--before section__title--after'>
+            <span>
+              {{ sectionTeachers.title }}
+            </span>
+          </p>
+          <h2 class='section__subtitle'>{{ sectionTeachers.subtitle }}</h2>
+          <div class="box">
+            {% for item in sectionTeachers.cards %}
+              {% call teachersCard.item(img = item.img, name = item.name, job = item.job) %}
+              {% for item in item.social %}
+                <a href="{{ item.url }}">
+                  <i class='bx {{ item.icon }}' ></i>
+                </a>
+              {% endfor %}
+              {% endcall %}
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-blog">
+        <div class="container container--narrow textCenter">
+          <p class='section__title section__title--before section__title--after'>
+            <span>
+              {{ sectionBlog.title }}
+            </span>
+          </p>
+          <h2 class='section__subtitle'>{{ sectionBlog.subtitle }}</h2>
+          <div class="box">
+            {% for card in sectionBlog.cards %}
+              {{classCard.item(
               blogCard= true,
               img= card.img,
               title= card.title,
@@ -400,8 +429,8 @@
               btnHref= card.btnUrl,
               blogDetails= card.details
             )}}
-          {% endfor %}
+            {% endfor %}
+          </div>
         </div>
-      </div>
-    </section>
-  {% endblock %}
+      </section>
+    {% endblock %}

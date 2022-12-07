@@ -202,6 +202,21 @@
   }
 }
 
+.section-teachers {
+  .container {
+    .box {
+      display: flex;
+      justify-content: space-between;
+
+      @include lg {
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  }
+}
+
 .section-blog {
   .container {
     .box {
