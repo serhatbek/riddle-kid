@@ -1,1 +1,106 @@
-<div>Footer</div>
+{% set footerItems = {
+  logo:'KidsRiddle',
+  desc: 'Labore dolor amet ipsum ea, erat sit ipsum duo eos. Volup amet ea dolor et magna dolor, elitr rebum duo est sed diam elitr. Stet elitr stet diam duo eos rebum ipsum diam ipsum elitr.',
+  socials: [
+    {
+      url:'/', icon: 'bxl-twitter'
+    },
+    {
+      url:'/', icon: 'bxl-facebook'
+      },
+    {
+      url:'/', icon: 'bxl-linkedin'
+    },
+    {
+      url:'/', icon: 'bxl-instagram'
+    }
+  ],
+  info: {
+    heading: 'Get In Touch',
+    contact: [
+      {
+        icon:'bxs-map', title:'Address', desc:'123 Street, New York, USA'
+      },
+      {
+        icon:'bxs-envelope', title:'Email', desc:'info@example.com'
+      },
+      {
+        icon:'bxs-phone', title:'Phone', desc:'+012 345 67890'
+      }
+    ]
+  },
+  siteLinks: {
+    heading: 'Quick Links',
+    links: [
+      {
+        icon:'bx-chevron-right', text: 'Home', link:'#home'
+      },
+      {
+        icon:'bx-chevron-right', text: 'About Us', link:'#about'
+      },
+      {
+        icon:'bx-chevron-right', text: 'Our Classes', link:'#classes'
+      },
+      {
+        icon:'bx-chevron-right', text: 'Our Teachers', link:'#teachers'
+      },
+      {
+        icon:'bx-chevron-right', text: 'Our Blog', link:'#blog'
+      },
+      {
+        icon:'bx-chevron-right', text: 'Contact Us', link:'#contact'
+      }
+    ]
+  },
+  formTitle: 'Newsletter'
+} %}
+
+<div class="container">
+  <div class="footer__top">
+    <div>
+      <a href="/">{{ footerItems.logo }}</a>
+      <p>{{ footerItems.desc }}</p>
+      <div>
+        {% for item in footerItems.socials %}
+          <a href="{{ item.url }}">
+            <i class='bx {{ item.icon }}' ></i>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div>
+      <h3>{{ footerItems.info.heading }}</h3>
+      {% for item in footerItems.info.contact %}
+        <div>
+          <i class='bx {{ item.icon }}' ></i>
+          <div>
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.desc }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div>
+      <h3>{{ footerItems.siteLinks.heading }}</h3>
+      <div>
+        {% for item in footerItems.siteLinks.links %}
+          <a href="{{ item.link }}">
+            <i class='bx {{ item.icon }}' ></i>
+            {{ item.text }}</a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div>
+      <h3>{{ footerItems.formTitle }}</h3>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>© <a href="/">Your Site Name</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com/">HTML Codex</a>
+    </p>
+    <p>Distributed By: <a href="https://themewagon.com/">ThemeWagon</a>
+    </p>
+  </div>
+</div>

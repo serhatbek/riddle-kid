@@ -293,7 +293,7 @@
  %}
 
 {% block content %}
-  <section class="section-banner">
+  <section id="home" class="section-banner">
     <div class="container">
       <div class="section-banner__left">
         <h1>{{bannerItems.title}}</h1>
@@ -325,7 +325,7 @@
       </div>
     </section>
 
-    <section class="section section-about">
+    <section id="about" class="section section-about">
       <div class="container container--narrow">
         <figure class='section-about__left'>
           <img src="{{sectionAbout.imgBig}}" alt="{{sectionAbout.subtitle}}">
@@ -364,7 +364,7 @@
       </div>
     </section>
 
-    <section class="section section-classes">
+    <section id="classes" class="section section-classes">
       <div class="container container--narrow textCenter">
         <p class='section__title section__title--before section__title--after'>
           <span>
@@ -383,15 +383,14 @@
               detailDesc= card.detailDesc,
               classesDetails= card.details,
               btnText= card.btn,
-              btnHref= card.btnUrl,
-              btnAttr= 'target=_blank'
+              btnHref= card.btnUrl
             )}}
           {% endfor %}
         </div>
       </div>
     </section>
 
-    <section class="section section-teachers">
+    <section id="teachers" class="section section-teachers">
       <div class="container container--narrow textCenter">
         <p class='section__title section__title--before section__title--after'>
           <span>
@@ -413,7 +412,7 @@
       </div>
     </section>
 
-    <section class="section section-blog">
+    <section id="blog" class="section section-blog">
       <div class="container container--narrow textCenter">
         <p class='section__title section__title--before section__title--after'>
           <span>
@@ -430,7 +429,6 @@
               desc= card.desc,
               btnText= card.btn,
               btnHref= card.btnUrl,
-              btnAttr= 'target=_blank',
               blogDetails= card.details
             )}}
           {% endfor %}
