@@ -1,6 +1,6 @@
 {% import "includes/components/Button/button.njk" as Button %}
 
-{% macro item(img, title, desc, classCard, classesDetails, btnText, btnHref, blogCard, blogDetails) %}
+{% macro item(img, title, desc, classCard, classesDetails, btnText, btnHref, btnAttr, blogCard, blogDetails) %}
   <div class="card">
     <figure>
       <img src="{{ img }}" alt="{{ title }}">
@@ -41,8 +41,9 @@
 
     {{Button.item(
       text= btnText,
-      class='sm',
-      href=btnHref
+      class= 'sm',
+      href= btnHref,
+      attr= btnAttr
     )}}
   </div>
 {% endmacro %}

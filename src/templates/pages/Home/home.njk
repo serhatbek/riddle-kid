@@ -303,7 +303,8 @@
           href='/',
           class='md',
           buttonv2=true,
-          text=bannerItems.btn
+          text=bannerItems.btn,
+          attr= 'target=_blank'
       )}}
       </div>
       <figure class="section-banner__right">
@@ -354,8 +355,10 @@
           </div>
 
           {{Button.item(
+            href= '/',
             class='sm',
-            text='Learn More'
+            text='Learn More',
+            attr= 'target=_blank'
           )}}
         </div>
       </div>
@@ -380,7 +383,8 @@
               detailDesc= card.detailDesc,
               classesDetails= card.details,
               btnText= card.btn,
-              btnHref= card.btnUrl
+              btnHref= card.btnUrl,
+              btnAttr= 'target=_blank'
             )}}
           {% endfor %}
         </div>
@@ -426,6 +430,7 @@
               desc= card.desc,
               btnText= card.btn,
               btnHref= card.btnUrl,
+              btnAttr= 'target=_blank',
               blogDetails= card.details
             )}}
           {% endfor %}

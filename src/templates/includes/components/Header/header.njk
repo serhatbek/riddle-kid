@@ -32,14 +32,15 @@
   <nav class='header__menu'>
     <div class="header__links">
       {% for item in navItems %}
-        <a class='{% if title == item.title -%} current {%- endif %}' href="{{item.url}}">{{item.title}}</a>
+        <a class='{% if title == item.title -%} current {%- endif %}' href="{{item.url}}" target="_blank">{{item.title}}</a>
       {% endfor %}
     </div>
 
     {{Button.item(
         href='/',
         text='Join Class',
-        class='sm'
+        class='sm',
+        attr='target=_blank'
       )}}
   </nav>
 </div>
